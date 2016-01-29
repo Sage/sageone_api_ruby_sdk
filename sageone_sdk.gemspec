@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["support@sageone.com"]
   spec.summary       = "SDK for Sage One API."
   spec.description   = "Provides Ruby methods for accessing the Sage One API endpoints."
-  spec.homepage      = ""
+  spec.homepage      = "https://developers.sageone.com/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport", "~> 4.0.4"
 
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency 'cane'
   spec.add_development_dependency 'flay'
   spec.add_development_dependency 'flog'
