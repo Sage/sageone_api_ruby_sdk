@@ -3,6 +3,7 @@ require "active_support/core_ext"
 
 module SageoneSdk
   module Middleware
+    # Signature
     class Signature < Faraday::Middleware
       def initialize(app, access_token, signing_secret)
         super(app)

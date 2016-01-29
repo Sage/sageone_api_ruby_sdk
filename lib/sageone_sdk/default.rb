@@ -1,6 +1,7 @@
 require 'sageone_sdk/version'
 
 module SageoneSdk
+  # Default
   module Default
     ACCESS_TOKEN = "default_access_token"
     SIGNING_SECRET = "default_signing_secret"

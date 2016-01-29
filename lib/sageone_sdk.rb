@@ -1,6 +1,6 @@
 require "sageone_sdk/client"
 require "sageone_sdk/default"
-
+# SageoneSdk
 module SageoneSdk
   autoload :SDataResponse, "sageone_sdk/sdata_response"
   class << self

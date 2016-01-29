@@ -1,5 +1,7 @@
 # SageoneSdk
 
+[![Build Status](https://travis-ci.org/Sage/sageone_api_ruby_sdk.svg?branch=master)](https://travis-ci.org/Sage/sageone_api_ruby_sdk)
+
 The `sageone_sdk` gem provides Ruby methods for accessing the Sage One API endpoints.
 
 ## Installation

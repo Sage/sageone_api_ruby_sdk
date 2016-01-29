@@ -3,6 +3,7 @@ require 'openssl'
 require 'cgi'
 
 module SageoneSdk
+  # Signature
   class Signature
     attr_reader :http_method, :nonce
 
