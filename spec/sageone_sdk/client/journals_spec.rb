@@ -21,7 +21,7 @@ describe SageoneSdk::Client::Journals do
        "journal_lines[1][details]" => "detail",
        "journal_lines[1][ledger_account][nominal_code]" => 9999}
     end
-    
+
     it "creates a journal" do
       journal = client.create_journal(data)
       expect(journal.reference).not_to be_nil
