@@ -6,6 +6,7 @@ module SageoneSdk
   class << self
     include SageoneSdk::Configurable
 
+    # Returns an instance of SageoneSdk::Client
     def client
       @client = SageoneSdk::Client.new unless defined?(@client)
       @client

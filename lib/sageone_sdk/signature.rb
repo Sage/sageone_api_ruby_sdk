@@ -17,6 +17,7 @@ module SageoneSdk
       @token = token
     end
 
+    # Generate None
     def self.generate_nonce
       SecureRandom.hex
     end

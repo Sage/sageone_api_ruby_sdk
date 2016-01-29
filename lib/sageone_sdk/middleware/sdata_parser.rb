@@ -8,6 +8,7 @@ module SageoneSdk
   module Middleware
     # Sdata parser
     class SDataParser < Faraday::Middleware
+      # Call
       def call(environment)
         @app.call(environment).on_complete do |env|
           element = ::JSON.parse(env[:body])

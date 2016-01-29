@@ -12,6 +12,7 @@ module SageoneSdk
         @signing_secret = signing_secret
       end
 
+      # Call
       def call(env)
         nonce = SageoneSdk::Signature.generate_nonce
         signature = SageoneSdk::Signature.new(env.method, env.url, env.body, nonce, @signing_secret, @access_token)
