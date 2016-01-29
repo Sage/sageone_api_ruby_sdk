@@ -1,7 +1,7 @@
 module SageoneSdk
   class Client
 
-    # Represents the chart of accounts. This is a list 
+    # Represents the chart of accounts. This is a list
     # of all of the accounts used by your business. It defines the structure
     # of your income, expenditure, assets, liabilities and capital when
     # running your management reports.

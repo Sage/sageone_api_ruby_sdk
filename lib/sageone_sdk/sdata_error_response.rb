@@ -1,4 +1,5 @@
 module SageoneSdk
+  # SData error response
   class SDataErrorResponse
     attr_reader :data
 

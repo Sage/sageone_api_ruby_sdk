@@ -1,4 +1,5 @@
 module SageoneSdk
+  # Configurable
   module Configurable
     attr_accessor :access_token, :connection_options, :default_media_type, :user_agent, :signing_secret
 

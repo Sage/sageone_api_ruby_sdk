@@ -1,4 +1,5 @@
 module SageoneSdk
+  # Authentication
   module Authentication
     def token_authenticated?
       !!@access_token

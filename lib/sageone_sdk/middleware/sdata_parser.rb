@@ -6,6 +6,7 @@ require "hashie/mash"
 
 module SageoneSdk
   module Middleware
+    # Sdata parser
     class SDataParser < Faraday::Middleware
       def call(environment)
         @app.call(environment).on_complete do |env|

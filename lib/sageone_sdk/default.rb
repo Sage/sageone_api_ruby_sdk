@@ -1,8 +1,9 @@
 require 'sageone_sdk/version'
 
 module SageoneSdk
+  # Default
   module Default
-    ACCESS_TOKEN = "default_access_token"
+    ACCESS_TOKEN = "ACCESS_TOKEN"
     SIGNING_SECRET = "default_signing_secret"
     API_ENDPOINT = "https://api.sageone.com".freeze
     USER_AGENT = "sageone_sdk Ruby Gem #{SageoneSdk::VERSION}".freeze

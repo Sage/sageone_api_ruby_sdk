@@ -1,5 +1,6 @@
 module SageoneSdk
   class Client
+    # Expenditures
     module Expenditures
       def expenditures(options = {})
         paginate "expenditures", options

@@ -28,6 +28,7 @@ require "sageone_sdk/client/tax_rates"
 require "sageone_sdk/client/transactions"
 
 module SageoneSdk
+  # Client
   class Client
     include SageoneSdk::Authentication
     include SageoneSdk::Configurable
