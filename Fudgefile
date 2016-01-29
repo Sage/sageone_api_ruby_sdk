@@ -1,5 +1,5 @@
 task_group :spec do
-  rspec :coverage => 80
+  rspec :coverage => 98.7
 end
 
 task_group :docs do
