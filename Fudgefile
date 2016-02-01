@@ -1,9 +1,9 @@
 task_group :spec do
-  rspec :coverage => 80
+  rspec :coverage => 98.7
 end
 
 task_group :docs do
-  task :yard, :coverage => 68
+  task :yard, :coverage => 100
 end
 
 task_group :codestyle do

@@ -62,37 +62,59 @@ module SageoneSdk
       end
     end
 
+    # Last Response
     def last_response
       @last_response if defined? @last_response
     end
 
+    # Paginate Get Request
+    # @param [String] resource the request resource
+    # @param [Hash] options the request data
     def paginate(resource, options = {})
       data = get(resource, options)
       data
     end
 
+    # Get Request
+    # @param [String] path the request path
+    # @param [Hash] data the request data
     def get(path, data={})
       request(:get, path, data)
     end
 
+    # Post Request
+    # @param [String] path the request path
+    # @param [Hash] data the request data
     def post(path, data={})
       request(:post, path, data)
     end
 
+    # Put Request
+    # @param [String] path the request path
+    # @param [Hash] data the request data
     def put(path, data={})
       request(:put, path, data)
     end
 
+    # Delete Request
+    # @param [String] path the request path
+    # @param [Hash] data the request data
     def delete(path, data={})
       request(:delete, path, data)
     end
 
+    # Request
+    # @param [String] method the request method
+    # @param [String] path the request path
+    # @param [Hash] data the request data
+    # @param [Hash] options Options for the request
     def request(method, path, data, options = {})
       path = File.join("accounts", "v1", path)
       @last_response = response = agent.public_send(method, URI::Parser.new.escape(path.to_s), data, options)
       response.body
     end
 
+    # Agent
     def agent
       @agent ||= Faraday.new(api_endpoint, faraday_options) do |builder|
         builder.request :url_encoded
