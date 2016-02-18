@@ -33,17 +33,20 @@ module SageoneSdk
         builder.response :json, :content_type => /\bjson$/
         builder.adapter Faraday.default_adapter
       end
+
+      payload = { client_id: @client_id, client_secret: @client_secret }
+
       if type == "access_token"
-         payload = {client_id: @client_id,
-                      client_secret: @client_secret,
-                      code: options[:code],
-                      grant_type: 'authorization_code',
-                      redirect_uri: @redirect_uri}
+        payload = payload.merge({
+          code: options[:code],
+          grant_type: 'authorization_code',
+          redirect_uri: @redirect_uri
+        })
       elsif type == "refresh_token"
-        payload = {client_id: @client_id,
-                      client_secret: @client_secret,
-                      refresh_token: @refresh_token,
-                      grant_type: 'refresh_token'}
+        payload = payload.merge({
+          refresh_token: @refresh_token,
+          grant_type: 'refresh_token'
+        })
       end
       json_response = request.post "#{api_endpoint}/oauth2/token", payload
       return json_response.body
