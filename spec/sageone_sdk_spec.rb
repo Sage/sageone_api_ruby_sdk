@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe SageoneSdk do
+
   describe "configurable" do
     it "can be configured" do
       SageoneSdk.configure do |config|
         config.access_token = "foo"
       end
-
       expect(SageoneSdk.access_token).to eq("foo")
     end
   end
