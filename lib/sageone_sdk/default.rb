@@ -5,6 +5,8 @@ module SageoneSdk
   module Default
     # Default Access Token
     ACCESS_TOKEN = "default_access_token"
+     # Default Refresh Token
+    REFRESH_TOKEN = "default_refresh_token"
     # Default Signing Secret
     SIGNING_SECRET = "default_signing_secret"
     # API Endpoint
@@ -29,6 +31,11 @@ module SageoneSdk
       # Retrieve access token
       def access_token
         ENV["SAGE_ONE_ACCESS_TOKEN"] || ACCESS_TOKEN
+      end
+
+      # Retrieve refresh token
+      def refresh_token
+        ENV["SAGE_ONE_REFRESH_TOKEN"] || REFRESH_TOKEN
       end
 
       # Retrieve signing secret

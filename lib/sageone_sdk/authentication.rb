@@ -10,14 +10,14 @@ module SageoneSdk
     end
 
     def request_access_token (code)
-      token_request("access_token", code)
+      token_request("access_token", {code: code})
     end
 
     def refresh_access_token(refresh_token)
-      token_request("refresh_token", nil)
+      token_request("refresh_token")
     end
 
-    def token_request(type, code)
+    def token_request(type, options = {})
       request = Faraday.new() do |builder|
         builder.request :url_encoded
         builder.response :json, :content_type => /\bjson$/
@@ -26,7 +26,7 @@ module SageoneSdk
       if type == "access_token"
          payload = {client_id: @client_id,
                       client_secret: @client_secret,
-                      code: code,
+                      code: options[:code],
                       grant_type: 'authorization_code',
                       redirect_uri: @redirect_uri}
       elsif type == "refresh_token"
@@ -37,7 +37,6 @@ module SageoneSdk
       end
       json_response = request.post 'https://api.sageone.com/oauth2/token', payload
       return json_response.body
-
     end
   end
 end
