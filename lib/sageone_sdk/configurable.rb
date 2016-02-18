@@ -1,7 +1,8 @@
 module SageoneSdk
   # Configurable
   module Configurable
-    attr_accessor :access_token, :connection_options, :default_media_type, :user_agent, :signing_secret
+    attr_accessor :access_token, :refresh_token, :connection_options, :default_media_type,
+                  :user_agent, :signing_secret, :redirect_uri, :client_id, :client_secret
 
     attr_writer :api_endpoint
 
@@ -10,10 +11,14 @@ module SageoneSdk
       def keys
         @keys ||= [
           :access_token,
+          :refresh_token,
           :signing_secret,
           :api_endpoint,
           :connection_options,
           :default_media_type,
+          :redirect_uri,
+          :client_id,
+          :client_secret,
           :user_agent
         ]
       end

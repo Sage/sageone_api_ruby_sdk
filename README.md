@@ -22,7 +22,40 @@ Or install it yourself as:
 
 ## Usage
 
-To create a `SageoneSdk::Client`, you need to provide your access_token and signing_secret:
+### Authorization
+Further information on authorisation and token requests is available [here](https://developers.sageone.com/docs/en/v1#authentication).
+
+### Authorization url
+To generate the authorisation url and to request an access token using a `SageoneSdk::Client`, you need to provide your client_id, client_secret and redirect_uri (callback url).
+
+
+client = SageoneSdk::Client.new({ client_id: @client_id,
+                                  client_secret: @client_secret,
+                                  redirect_uri: @redirect_uri})
+
+You can then return the generated authorization_url:
+
+redirect_to client.authorization_url
+
+### Token Request
+To request an access token using a `SageoneSdk::Client`, you will need to provide the code returned in the parameters from the authorisation url on a successful authorisation
+
+client = SageoneSdk::Client.new({ client_id: @client_id,
+                                  client_secret: @client_secret,
+                                  redirect_uri: @redirect_uri})
+
+client.request_access_token(code)
+
+### Refresh access_token request
+To refresh an access_token using `SageoneSdk::Client`, you will need to provide your refresh_token recieved when the access_token was generated
+
+client = SageoneSdk::Client.new({ client_id: @client_id,
+                                  client_secret: @client_secret)
+
+client.refresh_access_token(refresh_token)
+
+### Making requests
+To create a `SageoneSdk::Client`, and make requests to the apim you need to provide your access_token and signing_secret:
 
 ```
 @client = SageoneSdk::Client.new({access_token: @access_token,

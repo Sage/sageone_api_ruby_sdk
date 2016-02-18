@@ -5,6 +5,8 @@ module SageoneSdk
   module Default
     # Default Access Token
     ACCESS_TOKEN = "default_access_token"
+     # Default Refresh Token
+    REFRESH_TOKEN = "default_refresh_token"
     # Default Signing Secret
     SIGNING_SECRET = "default_signing_secret"
     # API Endpoint
@@ -13,6 +15,12 @@ module SageoneSdk
     USER_AGENT = "sageone_sdk Ruby Gem #{SageoneSdk::VERSION}".freeze
     # Media Type
     MEDIA_TYPE = "application/json"
+    # Redirct Uri
+    REDIRECT_URI = "redirect_uri_default"
+    # Client ID
+    CLIENT_ID = "client_id_default"
+    # Client Secret
+    CLIENT_SECRET = "client_secret_default"
 
     class << self
       # Options
@@ -23,6 +31,11 @@ module SageoneSdk
       # Retrieve access token
       def access_token
         ENV["SAGE_ONE_ACCESS_TOKEN"] || ACCESS_TOKEN
+      end
+
+      # Retrieve refresh token
+      def refresh_token
+        ENV["SAGE_ONE_REFRESH_TOKEN"] || REFRESH_TOKEN
       end
 
       # Retrieve signing secret
@@ -43,6 +56,21 @@ module SageoneSdk
       # Retrieve user agent
       def user_agent
         ENV["SAGE_ONE_USER_AGENT"] || USER_AGENT
+      end
+
+      # Retrieve redirect_uri
+      def redirect_uri
+        ENV["SAGE_ONE_REDIRECT_URI"] || REDIRECT_URI
+      end
+
+      # Retrieve client_id
+      def client_id
+        ENV["SAGE_ONE_CLIENT_ID"] || CLIENT_ID
+      end
+
+      # Retrieve client_secret
+      def client_secret
+        ENV["SAGE_ONE_CLIENT_SECRET"] || CLIENT_SECRET
       end
 
       # Connection Options
